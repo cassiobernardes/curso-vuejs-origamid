@@ -1,7 +1,7 @@
 <template>
   <section>
     <h2>Endereço de Envio</h2>
-    <ErroNotificacao :erros="erros" />
+    <ErroNotificacao :erros="erros"/>
     <UsuarioForm>
       <button class="btn" @click.prevent="finalizarCompra">Finalizar Compra</button>
     </UsuarioForm>
@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import UsuarioForm from "../components/UsuarioForm.vue";
-import { api } from "../services.js";
+import UsuarioForm from "@/components/UsuarioForm.vue";
+import { api } from "@/services.js";
 import { mapState } from "vuex";
 
 export default {
@@ -18,12 +18,12 @@ export default {
   components: {
     UsuarioForm
   },
+  props: ["produto"],
   data() {
     return {
       erros: []
     };
   },
-  props: ["produto"],
   computed: {
     ...mapState(["usuario"]),
     compra() {

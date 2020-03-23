@@ -1,9 +1,9 @@
 <template>
   <section>
     <UsuarioForm>
-      <ErroNotificacao :erros="erros" />
       <button class="btn" @click.prevent="atualizarUsuario">Atualizar Usuário</button>
     </UsuarioForm>
+    <ErroNotificacao :erros="erros"/>
   </section>
 </template>
 
@@ -34,6 +34,9 @@ export default {
           this.erros.push(error.response.data.message);
         });
     }
+  },
+  created() {
+    document.title = "Usuário | Editar";
   }
 };
 </script>

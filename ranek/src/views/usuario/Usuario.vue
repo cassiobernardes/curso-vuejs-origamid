@@ -3,16 +3,16 @@
     <nav class="sidenav">
       <ul>
         <li>
-          <router-link :to="{ name: 'usuario' }">Produtos</router-link>
+          <router-link :to="{name: 'usuario'}">Produtos</router-link>
         </li>
         <li>
-          <router-link :to="{ name: 'compras' }">Compras</router-link>
+          <router-link :to="{name: 'compras'}">Compras</router-link>
         </li>
         <li>
-          <router-link :to="{ name: 'vendas' }">Vendas</router-link>
+          <router-link :to="{name: 'vendas'}">Vendas</router-link>
         </li>
         <li>
-          <router-link :to="{ name: 'usuario-editar' }">Editar Usuário</router-link>
+          <router-link :to="{name: 'usuario-editar'}">Editar Usuário</router-link>
         </li>
         <li>
           <button @click="deslogar">Deslogar</button>
@@ -64,7 +64,6 @@ export default {
   background: #f4f7fc;
   margin-bottom: 10px;
   border-radius: 4px;
-  width: 200px;
 }
 
 .sidenav a.router-link-exact-active,
@@ -76,11 +75,10 @@ export default {
 
 .sidenav button {
   border: none;
-  width: 200px;
+  width: 100%;
   font-size: 1rem;
   text-align: left;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   cursor: pointer;
-  padding: 10px;
 }
 </style>

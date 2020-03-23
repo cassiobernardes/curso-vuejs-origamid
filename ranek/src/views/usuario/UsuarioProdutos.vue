@@ -1,7 +1,7 @@
 <template>
   <section>
     <h2>Adicionar Produto</h2>
-    <ProdutoAdicionar />
+    <ProdutoAdicionar/>
     <h2>Seus Produtos</h2>
     <transition-group v-if="usuario_produtos" name="list" tag="ul">
       <li v-for="(produto, index) in usuario_produtos" :key="index">
@@ -54,6 +54,7 @@ export default {
     if (this.login) {
       this.getUsuarioProdutos();
     }
+    document.title = "Usuário";
   }
 };
 </script>

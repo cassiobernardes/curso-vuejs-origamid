@@ -3,19 +3,19 @@
     <h1>Login</h1>
     <form>
       <label for="email">Email</label>
-      <input type="email" name="email" id="email" v-model="login.email" />
+      <input type="email" name="email" id="email" v-model="login.email">
       <label for="senha">Senha</label>
-      <input type="password" name="senha" id="senha" v-model="login.senha" />
+      <input type="password" name="senha" id="senha" v-model="login.senha">
       <button class="btn" @click.prevent="logar">Logar</button>
-      <ErroNotificacao :erros="erros" />
-      <p class="perdeu">
-        <a
-          href="http://localhost/ranek/wp-login.php?action=lostpassword"
-          target="_blank"
-        >Perdeu a senha? Clique aqui.</a>
-      </p>
+      <ErroNotificacao :erros="erros"/>
     </form>
-    <LoginCriar />
+    <p class="perdeu">
+      <a
+        href="http://ranekapilocal.local/wp-login.php?action=lostpassword"
+        target="_blank"
+      >Perdeu a senha? Clique aqui.</a>
+    </p>
+    <LoginCriar/>
   </section>
 </template>
 
@@ -41,16 +41,16 @@ export default {
       this.erros = [];
       this.$store
         .dispatch("logarUsuario", this.login)
-        .then(() => {
+        .then(response => {
           this.$store.dispatch("getUsuario");
           this.$router.push({ name: "usuario" });
         })
-        .catch(erro => {
-          this.erros.push(erro.response.data.message);
+        .catch(error => {
+          this.erros.push(error.response.data.message);
         });
     }
   },
-  created(){
+  created() {
     document.title = "Login";
   }
 };

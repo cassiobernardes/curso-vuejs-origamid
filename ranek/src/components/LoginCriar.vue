@@ -1,7 +1,7 @@
 <template>
   <section>
     <h2>Crie a Sua Conta</h2>
-    <ErroNotificacao :erros="erros" />
+    <ErroNotificacao :erros="erros"/>
     <transition mode="out-in">
       <button v-if="!criar" class="btn" @click="criar = true">Criar Conta</button>
       <UsuarioForm v-else>

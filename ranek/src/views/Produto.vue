@@ -3,7 +3,7 @@
     <div v-if="produto" class="produto">
       <ul class="fotos" v-if="produto.fotos">
         <li v-for="(foto, index) in produto.fotos" :key="index">
-          <img :src="foto.src" :alt="foto.titulo" />
+          <img :src="foto.src" :alt="foto.titulo">
         </li>
       </ul>
       <div class="info">
@@ -12,12 +12,12 @@
         <p class="descricao">{{produto.descricao}}</p>
         <transition mode="out-in" v-if="produto.vendido === 'false'">
           <button class="btn" v-if="!finalizar" @click="finalizar = true">Comprar</button>
-          <FinalizarCompra v-else :produto="produto" />
+          <FinalizarCompra v-else :produto="produto"/>
         </transition>
         <button v-else class="btn btn-disabled" disabled>Produto Vendido</button>
       </div>
     </div>
-    <PaginaCarregando v-else />
+    <PaginaCarregando v-else/>
   </section>
 </template>
 
@@ -73,8 +73,6 @@ export default {
 }
 
 .info {
-  grid-row: 1 / 3;
-  grid-column: 2;
   position: sticky;
   top: 20px;
 }
@@ -87,8 +85,6 @@ img {
   margin-bottom: 30px;
   box-shadow: 0 4px 8px rgba(30, 60, 90, 0.2);
   border-radius: 4px;
-  max-width: 60%;
-  height: auto;
 }
 
 .btn {
